@@ -1,7 +1,3 @@
-//
-// Created by Mark on 2/2/2024.
-//
-
 #pragma once
 
 #include <string>
@@ -9,7 +5,7 @@
 #include <array>
 #include "Model.h"
 
-namespace ECE141 {
+namespace JSONParserNamespace {
     bool runModelQueryTest(const std::string& aPath);
 
     class AutoGrader {
@@ -66,4 +62,4 @@ namespace ECE141 {
 
     };
 
-} // ECE141
+}

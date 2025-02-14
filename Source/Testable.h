@@ -5,7 +5,7 @@
 #include <optional>
 #include <sstream>
 
-namespace ECE141
+namespace JSONParserNamespace
 {
     class Testable
     {
@@ -43,4 +43,4 @@ namespace ECE141
 
     };
 
-} // namespace ECE141
+}

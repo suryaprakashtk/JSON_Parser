@@ -1,16 +1,9 @@
-//
-//  JSONParser2.cpp
-//  Assignment4
-//
-//  Created by rick gessner on 2/16/20.
-//
-
 #include "JSONParser.h"
 #include <cctype>
 #include <stdexcept>
 #include <cstring>
 
-namespace ECE141 {
+namespace JSONParserNamespace {
 
 	using Actions = bool (JSONParser::*)(char aChar, JSONState &aState, JSONListener *);
 	using parseCallback = bool(char aChar);
@@ -191,4 +184,4 @@ namespace ECE141 {
 		return theResult;
 	}
 
-} // namespace ECE141
+}

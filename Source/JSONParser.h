@@ -1,16 +1,9 @@
-//
-//  JSONParser.h
-//  Assignment4
-//
-//  Created by rick gessner on 2/16/20.
-//
-
 #pragma once
 
 #include <iostream>
 #include <stack>
 
-namespace ECE141 {
+namespace JSONParserNamespace {
 
 	// Type of the value
 	enum class Element {

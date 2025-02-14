@@ -1,13 +1,9 @@
-//
-// Created by Mark on 2/4/2024.
-//
-
 #pragma once
 
 #include <sstream>
 #include <iomanip>
 
-namespace ECE141 {
+namespace JSONParserNamespace {
 
     // Rounds a double to nearest hundredth
     inline std::string doubleToString(const double aValue) {
@@ -25,4 +21,4 @@ namespace ECE141 {
         return theString;
     }
 
-} // namespace ECE141
+}

@@ -7,12 +7,15 @@
 #include "Testable.h"
 #include "Debug.h"
 
+using namespace JSONParserNamespace;
+
 inline std::string getWorkingDirectoryPath() {
-    return "/home/surya/Desktop/Profile_Setup/Portfolio_Website/JSON_Parser/";
+    std::cout<<"Please change the path in your system"<<std::endl;
+    return "Change your working directory here. Keep the full path";
 }
 
 bool runAutoGraderTest(const std::string& aPath, const std::string& aTestName) {
-    ECE141::AutoGrader autoGrader(aPath);
+    AutoGrader autoGrader(aPath);
     return autoGrader.runTest(aTestName);
 }
 
@@ -35,7 +38,7 @@ int runTest(const int argc, const char* argv[]) {
     std::map<std::string, std::function<bool(const std::string&)>> theTestFunctions {
         { "compile", [](const std::string&) { return true; } },
         { "nofilter", runNoFilterTest },
-        { "query", ECE141::runModelQueryTest },
+        { "query", runModelQueryTest },
         { "basic", runBasicTest },
         { "advanced", runAdvancedTest }
     };
@@ -53,14 +56,17 @@ int runTest(const int argc, const char* argv[]) {
 int main(const int argc, const char* argv[]) {
     
     if (argc > 1)
-        return runTest(argc, argv);
+        runTest(argc, argv);
 
-    // Add your testing code here!
-    // std::fstream theJsonFile(getWorkingDirectoryPath() + "/Resources/sammy.json");
-    // ECE141::JSONParser theParser(theJsonFile);
-    // ECE141::Model theModel;
-    // theParser.parse(&theModel);
+    // Put any JSON in Resources folder and it will be parsed by below code!
+    std::fstream theJsonFile(getWorkingDirectoryPath() + "/Resources/sammy.json");
+    JSONParser theParser(theJsonFile);
+    Model theModel;
+    theParser.parse(&theModel);
 
-
+    // Query the model...
+    auto theQuery = theModel.createQuery();
+    auto theResult = theQuery.select("'sammy'").get("'username'");
+    std::cout << theResult.value_or("No result found") << std::endl;
     return 0;
 }

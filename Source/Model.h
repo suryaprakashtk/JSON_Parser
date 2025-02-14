@@ -1,7 +1,3 @@
-//
-// Created by Mark on 1/30/2024.
-//
-
 #pragma once
 
 #include <string>
@@ -11,11 +7,10 @@
 #include <map>
 #include <vector>
 
-namespace ECE141 {
+namespace JSONParserNamespace {
 
 	class ModelQuery; // Forward declare
 
-	// STUDENT: Your Model is built from a bunch of these...
 	class ModelNode {
 		public:
 			struct NullType{};
@@ -70,8 +65,6 @@ namespace ECE141 {
 		bool openContainer(const std::string &aKey, Element aType) override;
 		bool closeContainer(const std::string &aKey, Element aType) override;
 
-		// STUDENT: Your model will contain a collection of ModelNode*'s
-		//          Choose your container(s) wisely
 		std::stack<ModelNode*> currentstack;
 		
 	};
@@ -101,4 +94,4 @@ namespace ECE141 {
 	};
 
 
-} // namespace ECE141
+}

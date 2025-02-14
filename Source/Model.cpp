@@ -1,13 +1,9 @@
-//
-// Created by Mark on 1/30/2024.
-//
-
 #include "Model.h"
 #include "Debug.h"
 #include <sstream>
 #include "Formatting.h"
 
-namespace ECE141 {
+namespace JSONParserNamespace {
 
 	// ---Model---
 
@@ -76,7 +72,6 @@ namespace ECE141 {
 	}
 
 	bool Model::addItem(const std::string& aValue, Element aType) {
-		TODO;
 		// Print statement for debugging, remove after implementation
 		DBG("\t'" << aValue << "'");
 		ModelNode* currentContainer = currentstack.top();
@@ -400,7 +395,6 @@ namespace ECE141 {
 
 	double ModelQuery::sum() {
 		DBG("sum()");
-		TODO;
 		double result = 0.0;
 		if(!filteredList.empty() || isFilterApplied)
 		{
@@ -502,4 +496,4 @@ namespace ECE141 {
 
 	
 
-} // namespace ECE141
+}

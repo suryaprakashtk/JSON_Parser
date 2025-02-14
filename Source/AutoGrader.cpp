@@ -1,7 +1,3 @@
-//
-// Created by Mark on 2/2/2024.
-//
-
 #include "AutoGrader.h"
 
 #include "JSONParser.h"
@@ -18,7 +14,7 @@
         return false; \
     }
 
-namespace ECE141 {
+namespace JSONParserNamespace {
     bool runModelQueryTest(const std::string& aPath) {
         std::fstream theJsonFile(aPath + "/Resources/classroom.json");
         Model theModel;
@@ -238,4 +234,4 @@ namespace ECE141 {
         return std::nullopt;
     }
 
-} // ECE141
+}
